@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102e2a">
+  <meta name="description" content="Buscador Azteca: descubre temas y conocimiento en español.">
+  <title>Buscador Azteca — Explora el conocimiento</title>
+  <style>
+    :root{color-scheme:light;--ink:#172b27;--muted:#66746e;--green:#164b3e;--green2:#246a53;--gold:#e4ad43;--paper:#fbfaf6;--line:#e7e8df}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 5%,#e6eee5 0,transparent 47%),var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    header{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,7vw,100px);border-bottom:1px solid #e9ece5;background:#ffffffa8;backdrop-filter:blur(12px)}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:750;letter-spacing:-.4px}.mark{width:37px;height:37px;border-radius:12px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:21px}.top-note{font-size:13px;color:var(--muted)}
+    main{max-width:900px;margin:0 auto;padding:clamp(68px,12vh,122px) 22px 80px}.hero{text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green2);font-size:12px;font-weight:750;letter-spacing:1.5px;text-transform:uppercase}.spark{color:#c78d25;font-size:17px}h1{font-size:clamp(40px,7vw,66px);line-height:1.04;letter-spacing:-3.2px;margin:20px 0 17px;font-weight:780}.accent{color:var(--green2)}.subtitle{font-size:17px;line-height:1.65;color:var(--muted);max-width:570px;margin:0 auto 34px}
+    form{max-width:690px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 18px;background:white;border:1px solid #dfe5dc;border-radius:18px;box-shadow:0 12px 35px #233c2c12;transition:.2s}form:focus-within{border-color:#6d9c7c;box-shadow:0 0 0 4px #246a5316,0 12px 35px #233c2c12}.search-icon{color:#84918b;font-size:20px}.query{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:10px 0}.query::placeholder{color:#9ba59f}button{border:0;border-radius:12px;background:var(--green);color:white;padding:13px 20px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s,transform .15s}button:hover{background:#23644d;transform:translateY(-1px)}button:disabled{opacity:.65;cursor:wait;transform:none}.examples{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:20px auto 0;color:#7a8780;font-size:13px}.chip{border:1px solid var(--line);border-radius:999px;background:#ffffff9c;padding:7px 12px;color:#51645b;cursor:pointer;font:inherit;font-size:12px}.chip:hover{border-color:#abc3b1;color:var(--green)}
+    #status{min-height:25px;text-align:center;margin:32px auto 0;color:var(--muted);font-size:14px}.results{max-width:700px;margin:5px auto 0;display:grid;gap:13px}.result{padding:19px 21px;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 4px 14px #263e2e08;animation:rise .25s ease both}.result a{color:var(--green);text-decoration:none;font-size:18px;font-weight:700}.result a:hover{text-decoration:underline}.result p{margin:9px 0 0;color:#5f6e67;font-size:14px;line-height:1.65}.result small{display:block;color:#9a762e;font-size:11px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    footer{margin:68px auto 0;text-align:center;color:#829087;font-size:12px}footer a{color:var(--green2)}.loader{display:inline-block;width:15px;height:15px;border:2px solid #d8e2d9;border-top-color:var(--green);border-radius:50%;vertical-align:-3px;margin-right:8px;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:540px){header{height:64px;padding:0 17px}.top-note{font-size:11px}main{padding-top:70px}h1{letter-spacing:-2px}.subtitle{font-size:15px}form{gap:7px;padding-left:13px;border-radius:15px}.query{font-size:14px}button{padding:12px 14px}.result{padding:16px}}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="#" aria-label="Buscador Azteca, inicio"><span class="mark" aria-hidden="true">✳</span><span>Buscador Azteca</span></a><span class="top-note">Conocimiento para explorar</span></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <span class="eyebrow"><span class="spark">✦</span> Explora sin límites</span>
+      <h1 id="title">¿Qué quieres <span class="accent">descubrir?</span></h1>
+      <p class="subtitle">Encuentra respuestas, explora nuevas ideas y aprende algo interesante hoy.</p>
+      <form id="search-form" role="search">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input class="query" id="query" type="search" placeholder="Busca un tema, lugar o pregunta…" aria-label="Buscar" autocomplete="off" required>
+        <button id="submit" type="submit">Buscar <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="examples" aria-label="Búsquedas sugeridas">Prueba con: <button class="chip" type="button">Cultura mexica</button><button class="chip" type="button">Energía solar</button><button class="chip" type="button">Marte</button></div>
+    </section>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section class="results" id="results" aria-label="Resultados de búsqueda"></section>
+    <footer>Resultados de Wikipedia · Búsqueda gratuita, sin registro ni clave API<br>Hecho para curiosos <span aria-hidden="true">✦</span></footer>
+  </main>
+  <script>
+    const form=document.querySelector('#search-form');
+    const input=document.querySelector('#query');
+    const button=document.querySelector('#submit');
+    const status=document.querySelector('#status');
+    const results=document.querySelector('#results');
+    document.querySelectorAll('.chip').forEach(chip=>chip.addEventListener('click',()=>{input.value=chip.textContent;form.requestSubmit()}));
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();
+      const term=input.value.trim();
+      if(!term)return;
+      button.disabled=true;results.replaceChildren();status.innerHTML='<span class="loader" aria-hidden="true"></span>Buscando…';
+      try{
+        const url=new URL('https://es.wikipedia.org/w/api.php');
+        url.search=new URLSearchParams({action:'query',list:'search',srsearch:term,srlimit:'10',format:'json',origin:'*',utf8:'1'});
+        const response=await fetch(url);
+        if(!response.ok)throw new Error('No se pudo conectar con el servicio de búsqueda.');
+        const data=await response.json();
+        const items=data?.query?.search||[];
+        if(!items.length){status.textContent='No encontramos resultados. Prueba con otras palabras.';return;}
+        status.textContent=`${items.length} resultados para “${term}”`;
+        const fragment=document.createDocumentFragment();
+        items.forEach(item=>{
+          const article=document.createElement('article');article.className='result';
+          const label=document.createElement('small');label.textContent='Wikipedia · Español';
+          const link=document.createElement('a');link.textContent=item.title;link.href=`https://es.wikipedia.org/wiki/${encodeURIComponent(item.title.replaceAll(' ','_'))}`;link.target='_blank';link.rel='noopener noreferrer';
+          const excerpt=document.createElement('p');excerpt.innerHTML=item.snippet||'';
+          article.append(label,link,excerpt);fragment.append(article);
+        });
+        results.append(fragment);
+      }catch(error){status.textContent=error.message||'Ocurrió un error. Intenta de nuevo.';}
+      finally{button.disabled=false;}
+    });
+  </script>
+</body>
+</html>
